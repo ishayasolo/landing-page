@@ -12,13 +12,13 @@ header {
   color: #e5e7eb;
 }
 
-nav > .nav-controllers {
+nav > div.nav-controllers {
   padding-top: 1rem;
   display: flex;
   justify-content: space-between;
 }
 
-nav .logo {
+nav > div.nav-controllers > a.logo {
   font-size: 2rem;
   font-weight: bold;
   text-decoration: none;
@@ -26,7 +26,7 @@ nav .logo {
   padding: 0.5rem 1rem;
 }
 
-nav button#hamburger {
+nav > div.nav-controllers > button#hamburger {
   background-color: #1f2937;
   color: #f9faf8;
   padding: 0.5rem 1rem;
@@ -36,23 +36,10 @@ nav button#hamburger {
   border: none;
 }
 
-nav button#hamburger:hover {
+nav > div.nav-controllers > button#hamburger:hover {
   border: 2px solid #f9faf8;
   border-radius: 5px;
   font-size: 1.75rem;
-}
-
-nav button#closeBtn {
-  background-color: #1f2937;
-  color: #f9faf8;
-  padding: 0.5rem 1rem;
-  margin-right: 1rem;
-  font-size: 2rem;
-  font-weight: bold;
-  border: none;
-  position: absolute;
-  top: 0;
-  right: 0;
 }
 
 nav > ul {
@@ -73,7 +60,20 @@ nav > ul {
   justify-content: center;
 }
 
-nav li > a {
+nav > ul > button#closeBtn {
+  background-color: #1f2937;
+  color: #f9faf8;
+  padding: 0.5rem 1rem;
+  margin-right: 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+  border: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+nav > ul > li > a {
   text-decoration: none;
   display: block;
   text-align: center;
@@ -82,30 +82,30 @@ nav li > a {
   font-size: 1.5rem;
 }
 
-nav li > a:hover {
+nav > ul > li > a:hover {
   background-color: #232d3a;
 }
 
-.header-section {
+section.header-section {
   padding: 2rem 1rem 4rem;
 }
 
-.header-section > .image {
-  display: none;
-}
-
-.header-section h1 {
+section.header-section > div.text > h1 {
   color: #f9faf8;
   font-size: 4rem;
   margin: 0;
 }
 
-.header-section p {
+section.header-section > div.text > p {
   color: #e5e7eb;
   font-size: 2rem;
 }
 
-.header-section button#cta {
+section.header-section > div.image {
+  display: none;
+}
+
+section.header-section > div.text > button#cta {
   background-color: #3882f6;
   border: #3882f6;
   color: #f9faf8;
@@ -115,30 +115,32 @@ nav li > a:hover {
   font-size: 1.5rem;
 }
 
-.header-section button#cta:hover {
+section.header-section > div.text > button#cta:hover {
   background-color: #1f2937;
   color: #f9faf8;
   border: 2px solid #f9faf8;
 }
 
-.cube-container {
+div.cube-container {
   display: flex;
-  align-content: stretch;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   gap: 3rem;
   padding: 5rem;
 }
 
-.mini-cube {
+div.cube-container > div.mini-cube {
   border-radius: 10px;
   border: 2px solid #3882f6;
-  flex: auto;
+  width: 200px;
+  height: 200px;
 }
 
-.mini-cube img {
-  width: 40%;
+div.cube-container > div.mini-cube > img {
+  width: 50%;
   display: block;
-  margin: 0 auto;
+  margin: 25%;
 }
 
 footer {
@@ -154,123 +156,100 @@ footer a {
 }
 
 @media only screen and (min-width: 768px) {
-  header {
-    padding: 2rem;
-  }
-  
-  .header-container,
-  .main-container {
-    max-width: 1000px;
-    margin:  auto;
-    padding: 0 10px;
-  }
-  
   nav {
     display: flex;
     justify-content: space-between;
-    align-content: stretch;
   }
   
-  nav > .logo {
-    font-size: 1.5rem;
+  nav > div.nav-controllers {
+    padding-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  nav > div.nav-controllers > a.logo {
+    font-size: 2rem;
     font-weight: bold;
     text-decoration: none;
     color: #f9faf8;
-    padding: 0.5rem;
+    padding: 0.5rem 1rem;
+  }
+  
+  nav > div.nav-controllers > button#hamburger {
+    display: none;
   }
   
   nav > ul {
-    display: flex;
-    gap: 10px;
     list-style-type: none;
     padding: 0;
     margin: 0;
-  }
-  
-  nav li > a {
-    text-decoration: none;
-    display: inline-block;
-    padding: 1rem;
-    color: #e5e7eb;
-  }
-  
-  nav li > a:hover {
-    background-color: #232d3a;
-  }
-  
-  .header-section {
+    position: relative;
+    width: auto;
     display: flex;
-    padding: 2rem 0;
+    flex-direction: row;
+  }
+  
+  nav > ul > button#closeBtn {
+    display: none;
+  }
+  
+  section.header-section {
+    padding: 2rem 1rem 4rem;
+    display: flex;
     gap: 2rem;
   }
   
-  .header-section > .text,
-  .header-section > .image {
-    flex: 1;
-    padding: 0;
+  section.header-section > div.text,
+  section.header-section > div.image {
+    flex-basis: 50%;
+    display: block;
   }
   
-  .header-section > .image {
+  section.header-section > div.image {
     display: flex;
     align-items: center;
   }
   
-  .header-section img {
-    width: 80%;
-    display: block;
-    margin: 0 1rem 0 auto;
-  }
-  
-  .header-section h1 {
+  section.header-section > div.text > h1 {
     color: #f9faf8;
-    font-size: 3rem;
+    font-size: 4rem;
     margin: 0;
   }
   
-  .header-section p {
+  section.header-section > div.text > p {
     color: #e5e7eb;
-    font-size: 1.125rem;
+    font-size: 2rem;
   }
   
-  .header-section button {
+  section.header-section > div.image > img {
+    width: 100%;
+  }
+  
+  section.header-section > div.text > button#cta {
     background-color: #3882f6;
     border: #3882f6;
     color: #f9faf8;
     border-radius: 5px;
-    padding: 0.5rem 2rem;
+    padding: 1rem 2rem;
     font-weight: bold;
-    font-size: 1.15rem;
+    font-size: 1.5rem;
   }
   
-  .cube-container {
-    display: flex;
-    align-content: stretch;
-    justify-content: center;
-    gap: 3rem;
+  section.header-section > div.text > button#cta:hover {
+    background-color: #1f2937;
+    color: #f9faf8;
+    border: 2px solid #f9faf8;
+  }
+  
+  div.cube-container {
+    flex-direction: row;
     padding: 5rem;
   }
   
-  .mini-cube {
+  div.cube-container > div.mini-cube {
     border-radius: 10px;
     border: 2px solid #3882f6;
-    flex: auto;
-  }
-  
-  .mini-cube img {
-    width: 40%;
-    display: block;
-    margin: 0 auto;
-  }
-  
-  footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: #1f2937;
-    color: #e5e7eb;
-  }
-  
-  footer a {
-    text-decoration: none;
-    color: #aaaaaa;
+    width: 100px;
+    height: 100px;
   }
 }
