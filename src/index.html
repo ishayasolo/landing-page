@@ -6,16 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Landing Page</title>
 
-    <!-- custom stylesheets -->
+    <!-- custom stylesheet -->
     <link rel="stylesheet" href="./style.css">
+    
+    <!-- custom JavaScript -->
+    <script src="./script.js" type="text/javascript" charset="utf-8"></script>
   </head>
 
   <body>
     <header>
       <div class="header-container">
         <nav>
-          <a href="./index.html" class="logo">header logo</a>
-          <ul>
+          <div class="nav-controllers">
+            <a href="./index.html" class="logo">header logo</a>
+            <button id="hamburger" onclick="openNav()">&#9776;</button>
+          </div>
+          <ul id="navContent">
+            <button id="closeBtn" onclick="closeNav()">&#10006;</button>
             <li><a href='#'>link one</a></li>
             <li><a href='#'>link two</a></li>
             <li><a href='#'>link three</a></li>
@@ -23,9 +30,9 @@
         </nav>
         <section class="header-section">
           <div class="text">
-            <h1>This website is awesome</h1>
-            <p>This website has some sub-text that goes here under the main title. It's a smaller font and the color is lower contrast</p>
-            <button>Sign up</button>
+            <h1>This<br>website<br>is<br>awesome</h1>
+            <p>This website has some sub-text that goes here under the main title. It's a smaller font and the color is of lower contrast</p>
+            <button id="cta">Sign up</button>
           </div>
           <div class="image">
             <img src="../assets/img/header-img.jpg" alt="a man coding on a laptop">
