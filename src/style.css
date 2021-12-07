@@ -156,6 +156,12 @@ footer a {
 }
 
 @media only screen and (min-width: 768px) {
+  header > div.header-container,
+  main > div.main-container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
   nav {
     display: flex;
     justify-content: space-between;
