@@ -109,6 +109,7 @@ section.header-section > div.image {
 }
 
 section.header-section > div.text > button#cta-top {
+  font-family: 'Montserrat', Ubuntu, Roboto, sans-serif;
   background-color: #3882f6;
   border: 2px solid #3882f6;
   color: #f9faf8;
@@ -318,6 +319,7 @@ footer a {
   }
 
   section.bottom-section > div.cta-bottom-container > div.button-container > button#cta-bottom {
+    font-family: 'Montserrat', ubuntu, Roboto, sans-serif;
     background-color: #3882f6;
     border: 2px solid #f9faf8;
     color: #f9faf8;
